@@ -16,7 +16,7 @@ Just paste this snippet into your html header:
 
 ```html
 <script type="text/javascript">
-    var s=document.createElement("script");s.type="text/javascript",s.src="https://js.tamber.com/1.0.12/tamber.min.js",s.async=!0,document.getElementsByTagName("head")[0].appendChild(s),s.onload=s.onreadystatechange=function(){
+    var s=document.createElement("script");s.type="text/javascript",s.src="https://js.tamber.com/1.0.13/tamber.min.js",s.async=!0,document.getElementsByTagName("head")[0].appendChild(s),s.onload=s.onreadystatechange=function(){
         window.tamber = window.tamber("YOUR_PROJECT_KEY");
         window.tamber.trackGuests(true);
     };
@@ -35,7 +35,9 @@ If you are using a templating language to generate your pages, call this method 
 
 ```js
 // example syntax
-window.tamber.setUser({{user.id}});
+<% if user_signed_in? %> 
+    window.tamber.setUser(%=user_id%);
+<% end %>
 ``` 
 
 If you retrieve the user's unique ID from your backend on page load, add the method call wherever that retrieval is handled.
