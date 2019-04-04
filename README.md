@@ -63,7 +63,10 @@ window.tamber.event.track({
         tags: ["sci-fi", "bestseller"]
     },
     behavior: "shared",
-    context: ["homepage", "for_you_section"]
+    context: {
+      "page": "homepage", 
+      "section": "featured_section"
+    }
 });
 ```
 
